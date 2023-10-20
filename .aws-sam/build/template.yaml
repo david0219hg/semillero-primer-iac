@@ -1,0 +1,17 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Globals:
+  Function:
+    Timeout: 30
+Resources:
+  SemilleroFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: SemilleroFunction
+      Handler: handler_clean_information.handler
+      Runtime: python3.10
+      Policies:
+      - AWSLambdaBasicExecutionRole
+      - AWSLambdaRole
+    Metadata:
+      SamResourceId: SemilleroFunction
